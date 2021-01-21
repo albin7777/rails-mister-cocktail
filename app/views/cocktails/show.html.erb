@@ -1,6 +1,7 @@
 <div class="container">
 
   <h1><%= @cocktail.name %></h1>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill if @cocktail.photo.attached? %>
   <%= link_to "Back to all cocktails", root_path %>
 
   <div class="row">
@@ -26,6 +27,7 @@
           <% end %>
         </tbody>
       </table>
+
     </div>
     <div class="col-sm-12 col-md-6">
 
